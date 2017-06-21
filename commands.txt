@@ -1,0 +1,92 @@
+Read out the main freq.
+  AL~FR0
+
+Read out the sub freq.
+  AL~FR1
+
+  I/Q ON
+  AL~SDRON
+
+  I/Q OFF
+  AL~SDROF
+
+  Detection output ON
+  AL~DETON
+
+  Detection output OFF
+  AL~DETOF
+
+  DIAL operation
+  AL~DIAL(*1)(*2)(*3)
+  (*1)0: Left dials  1:Right dials
+  (*2)U: Upper knob  L:Lower ring
+  (*3)U: clockwise, D:c/clockwise
+
+Key operation
+  AL~KEY(*)
+  (*)can be any of the following characters:
+  0
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  MAIN
+  SUB
+  SCOPE
+  VPM
+  .
+  ENT
+  L (Press left dial)
+  R (Press right dial)
+  F
+  MONI
+  SCAN
+
+RF volume level
+  AL~VOL(*1)(*2)(*3)
+  (*1)0:main, 1:sub
+     Send 0x13 followed by (*1) to read the current setting level.
+  (*2)(*3)UP:up or DN:down and level in decimal 2-digit (Level 10 = 10)
+
+  SQL
+  AL~VOL(*1)(*2)(*3)
+  (*1)0:main, 1:sub
+     Send 0x13 followed by (*1) to read the current setting level.
+  (*2)(*3)UP:up or DN:down and level in decimal 2-digit (Level 10 = 10)
+
+  Mode setting
+  AL~MODFM
+  AL~MODAM
+  AL~MODWFM
+  AL~MODLSB
+  AL~MODUSB
+  AL~MODCW
+
+  TSQ
+  AL~TSQ(*1)(*2)(*3)(*4)
+  (*1)0:main, 1:sub
+     Send 0x13 followed by (*1) to read the current setting level.
+Set the TSQ value to (*2)(*3)(*4)
+
+  DCS
+  AL~DCS
+  AL~DCS(*1)(*2)(*3)(*4)
+(*1)0:main, 1:sub
+     Send 0x13 followed by (*1) to read the current setting level.
+Set the DSQ value to (*2)(*3)(*4)
+
+  Setting sub-tone
+  AL~ST(*1)(*2)(*3)(*4)
+(*1)0:main, 1:sub
+     Send 0x13 followed by (*1) to read the current setting level.
+  parameters: OFF, TSQ, SQ, DCS, TRAIN for (*2)(*3)(*4)
+
+Writing frequencies
+  AL~FW(*1)(*2)Å`(*11)
+(*1)0:main, 1:sub
+Enter GHz to 1Hz digit to (*2)Å`(*11)
